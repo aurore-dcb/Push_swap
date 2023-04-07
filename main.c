@@ -2,15 +2,60 @@
 
 void ft_swap(t_list **begin)
 {
-    printf("size a : %d\n", ft_list_size(*begin));
-
     t_list *tmp;
+
     if (*begin && (*begin)->next)
     {
         tmp = (*begin)->next;
         (*begin)->next = tmp->next;
         tmp->next = *begin;
         *begin = tmp;
+    }
+}
+
+void ft_push(t_list **begin_a, t_list **begin_b)
+{
+    t_list *new_begin;
+    t_list *new_next;
+    
+    if (*begin_b != NULL)
+    {
+        new_begin = (*begin_b)->next;
+        new_next = *begin_a;
+        *begin_a = *begin_b;
+        (*begin_a)->next = new_next;
+        *begin_b = new_begin;
+    }
+}
+
+void ft_rotate(t_list **begin)
+{
+    t_list *tmp;
+
+    if (*begin && (*begin)->next)
+    {
+        tmp = *begin;
+        *begin = (*begin)->next;
+        while ((*begin)->next)
+            *begin = (*begin)->next;
+        (*begin)->next = tmp;
+        *begin = tmp->next;
+        tmp->next = NULL;
+    }
+}
+
+void ft_rev_rotate(t_list **begin)
+{
+    t_list *tmp;
+
+    if (*begin && (*begin)->next)
+    {
+        while ((*begin)->next)
+            *begin = (*begin)->next;
+        
+        (*begin)->next = tmp;
+        *begin = tmp->next;
+        tmp->next = NULL;
     }
 }
 
@@ -32,7 +77,7 @@ int main(int argc, char **argv)
     elem3.i = -2;
     elem4.i = 444;
 
-    t_list *begin2, elem5, elem6, elem7;
+    t_list *begin2 , elem5, elem6, elem7;
 
     begin2 = &elem5;
     elem5.next = &elem6;
@@ -43,8 +88,12 @@ int main(int argc, char **argv)
     elem6.i = 64;
     elem7.i = -8;
 
-    ft_swap(&begin1);
-    ft_swap(&begin2);
+    // ft_swap(&begin1);
+    // ft_swap(&begin2);
+    // ft_push(&begin1, &begin2);
+    // ft_push(&begin2, &begin1);
+    // ft_rotate(&begin2);
+    // ft_rotate(&begin1);
 
     while (begin1)
     {
