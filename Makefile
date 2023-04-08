@@ -1,5 +1,5 @@
 NAME = push_swap
-SRCS = main.c
+SRCS = main.c parsing.c sorting_fct.c ft_utils.c the_sort.c
 OBJS = ${SRCS:.c=.o}
 
 CFLAGS = -Wall -Wextra -Werror
@@ -7,15 +7,15 @@ CC = gcc
 
 RM = rm -f
 
-all:	${NAME}
+all:		${NAME}
 
-NAME:	${OBJS}
-		${CC} ${CFLAGS} -o ${NAME} ${SRCS}
+${NAME}:	${OBJS}
+			${CC} ${CFLAGS} -o ${NAME} ${SRCS}
 
 clean:
-		${RM} ${OBJS}
+			${RM} ${OBJS}
 
 fclean: clean
-		${RM} ${NAME}
+			${RM} ${NAME}
 	
 re:	fclean all

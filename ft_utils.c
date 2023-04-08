@@ -1,5 +1,14 @@
 #include "push_swap.h"
 
+void display_tab(int *tab, int len)
+{
+    int i = 0;
+    while (i < len)
+    {
+        printf("tab[%d] = %d\n", i, tab[i]);
+        i++;
+    }
+}
 int ft_list_size(t_list *begin)
 {
     int i;

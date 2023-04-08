@@ -1,5 +1,6 @@
 #include "push_swap.h"
 
+// que des nombres
 int only_numbers(char **argv)
 {
     int i;
@@ -19,6 +20,30 @@ int only_numbers(char **argv)
     }
     return (1);
 }
+
+// pas de doublons
+int no_doubles(char **argv)
+{
+    int i;
+    int j;
+
+    i = 0;
+    while (argv[i])
+    {
+        j = i + 1;
+        while (argv[j])
+        {
+            if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+                return (0);
+            j++;
+        }
+        i++;
+    }
+    return (1);
+}
+
+// pas plus grand qu'un int
+
 
 t_list *ft_create_elem(int data)
 {
@@ -53,7 +78,8 @@ int ft_parsing(char **argv, t_list **begin_a)
 
     if (!only_numbers(argv))
         return (0);
-    // ajouter dans la liste chainée
+    if (!no_doubles(argv))
+        return (0);
     i = 1;
     while (argv[i])
     {
