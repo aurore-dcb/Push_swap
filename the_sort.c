@@ -73,11 +73,18 @@ void keep_just_max(t_list **begin_a, t_list **begin_b, int *tab)
         if ((*begin_a)->i != max)
         {
             ft_push(&begin_b, &begin_a);
+            printf("pb\n");
             if ((*begin_b)->i >= tab[(len) / 2])
+            {
                 ft_rotate(&begin_b);
+                printf("rb\n");
+            }
         }
         else
+        {
             ft_rotate(&begin_a);
+            printf("ra\n");
+        }
     }
 }
 
@@ -85,7 +92,7 @@ int sorting(t_list **begin_a, t_list **begin_b)
 {
     int *tab;
 
-    int len = ft_list_size(*begin_a);
+    // int len = ft_list_size(*begin_a);
     tab = malloc(sizeof(int) * ft_list_size(*begin_a));
     create_sort_tab(begin_a, tab);
     // display_tab(tab, len);
