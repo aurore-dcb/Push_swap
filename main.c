@@ -21,10 +21,10 @@ int main(int argc, char **argv)
             printf("Erreur lors du tri\n");
             return (0);
         }
-        else
-        {
-            printf("Tri ok\n");
-        }
+        // else
+        // {
+        //     printf("Tri ok\n");
+        // }
         // fin tri
 
         // ft_swap(&begin_a);
@@ -36,20 +36,20 @@ int main(int argc, char **argv)
         // ft_push(&begin_a, &begin_b);
         // ft_push(&begin_a, &begin_b);
 
-        printf("Pile a : \n");
-        while (begin_a)
-        {
-            printf("%d", (begin_a)->i);
-            begin_a = (begin_a)->next;
-            printf("\n");
-        }
-        printf("\nPile b : \n");
-        while (begin_b)
-        {
-            printf("%d", begin_b->i);
-            begin_b = begin_b->next;
-            printf("\n");
-        }
+        // printf("Pile a : \n");
+        // while (begin_a)
+        // {
+        //     printf("%d", (begin_a)->i);
+        //     begin_a = (begin_a)->next;
+        //     printf("\n");
+        // }
+        // printf("\nPile b : \n");
+        // while (begin_b)
+        // {
+        //     printf("%d", begin_b->i);
+        //     begin_b = begin_b->next;
+        //     printf("\n");
+        // }
     }
     else
         printf("Error\n");
