@@ -28,17 +28,23 @@ void displays(t_list **begin_a, t_list **begin_b)
 
 	start = *begin_a;
 	printf("pile a :\n");
-	while (start)
+	if (start != NULL)
 	{
-		printf("%d\n", start->i);
-		start = start->next;
+		while (start)
+		{
+			printf("%d\n", start->i);
+			start = start->next;
+		}
 	}
 	start = *begin_b;
 	printf("\npile b :\n");
-	while (start)
+	if (start != NULL)
 	{
-		printf("%d\n", start->i);
-		start = start->next;
+		while (start)
+		{
+			printf("%d\n", start->i);
+			start = start->next;
+		}
 	}
 }
 

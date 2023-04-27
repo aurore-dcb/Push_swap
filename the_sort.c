@@ -1,13 +1,12 @@
 #include "push_swap.h"
 
-t_stock *ft_create_elem_stock(int n, int i, int maj, int move)
+t_stock *ft_create_elem_stock(int i, int maj, int move)
 {
     t_stock *elem;
 
     elem = malloc(sizeof(t_stock));
     if(!elem)
         return (NULL);
-    elem->n = n;
     elem->index = i;
     elem->index_maj = maj;
     elem->nb_move = move;
@@ -15,7 +14,7 @@ t_stock *ft_create_elem_stock(int n, int i, int maj, int move)
     return(elem);
 }
 
-void ft_list_push_back_stock(t_stock **begin_list, int n, int i, int maj, int move)
+void ft_list_push_back_stock(t_stock **begin_list, int i, int maj, int move)
 {
     t_stock *list;
 
@@ -24,11 +23,11 @@ void ft_list_push_back_stock(t_stock **begin_list, int n, int i, int maj, int mo
     {
         while (list->next)
             list = list->next;
-        list->next = ft_create_elem_stock(n, i, maj, move);
+        list->next = ft_create_elem_stock(i, maj, move);
     }
 	else
     {
-		*begin_list = ft_create_elem_stock(n, i, maj, move);
+		*begin_list = ft_create_elem_stock(i, maj, move);
     }
 }
 
@@ -88,9 +87,55 @@ void create_list(t_list **begin_a, t_list **begin_b, t_stock **list, int max)
     {
         maj = index_maj(begin_a, begin->i, max);
         move = count_move(begin_a, begin_b, index, maj);
-        ft_list_push_back_stock(list, begin->i, index, maj, move);
+        ft_list_push_back_stock(list, index, maj, move);
         begin = begin->next;
         index++;
+    }
+}
+
+void move_stack_b(t_list **begin_b, int index)
+{
+
+    if (index <= ft_list_size(*begin_b) / 2)
+    {
+        while (index > 0)
+        {
+            ft_rotate(begin_b);
+            printf("rb\n");
+            index--;
+        }
+    }
+    else
+    {
+        while (index < ft_list_size(*begin_b))
+        {
+            ft_rev_rotate(begin_b);
+            printf("rrb\n");
+            index++;
+        }
+    }
+}
+
+void move_stack_a(t_list **begin_a, int index_maj)
+{
+
+    if (index_maj <= ft_list_size(*begin_a) / 2)
+    {
+        while (index_maj > 0)
+        {
+            ft_rotate(begin_a);
+            printf("ra\n");
+            index_maj--;
+        }
+    }
+    else
+    {
+        while (index_maj < ft_list_size(*begin_a))
+        {
+            ft_rev_rotate(begin_a);
+            printf("rra\n");
+            index_maj++;
+        }
     }
 }
 
@@ -98,15 +143,12 @@ void move_elem(t_list **begin_a, t_list **begin_b, t_stock **list)
 {
     int nb_min;
     int i;
-    // int maj;
-    int number;
+    int maj;
     t_stock *begin;
-    (void)begin_a;
 
     nb_min = (*list)->nb_move;
     i = (*list)->index;
-    // maj = (*list)->index_maj;
-    number = (*list)->n;
+    maj = (*list)->index_maj;
     begin = *list;
     while (begin)
     {
@@ -114,19 +156,12 @@ void move_elem(t_list **begin_a, t_list **begin_b, t_stock **list)
         {
             nb_min = begin->nb_move;
             i = (*list)->index;
-            // maj = (*list)->index_maj;
-            number = (*list)->n;
+            maj = (*list)->index_maj;
         }
         begin = begin->next;
     }
-    while ((*begin_b)->i != number)
-    {
-        if (i > ft_list_size(*begin_b) / 2)
-            ft_rev_rotate(begin_b);
-        else
-            ft_rotate(begin_b);
-    }
-
+    move_stack_b(begin_b, i);
+    move_stack_a(begin_a, maj);
 }
 
 /* pour l'instant est sensé afficher la liste de stockage des données */
@@ -134,13 +169,13 @@ void final_sort(t_list **begin_a, t_list **begin_b, t_stock **list, int max)
 {
     (void)begin_a;
     (void)begin_b;
-    t_stock *begin;
+    // t_stock *begin;
 
     // while (begin_b)
     // {
         create_list(begin_a, begin_b, list, max);
         // ------- affiche les données de list
-        begin = *list;
+        /*begin = *list;
         while (begin)
         {
             printf("index : %d\n", begin->index);
@@ -148,16 +183,12 @@ void final_sort(t_list **begin_a, t_list **begin_b, t_stock **list, int max)
             printf("nb_move : %d\n", begin->nb_move);
             begin = begin->next;
             printf("\n\n");
-        }
+        }*/
         // ----------------------------
         // ------ passer le maillon qui demande le moins de move sur la pile a
         move_elem(begin_a, begin_b, list);
         ft_push(begin_a, begin_b);
-        printf("pa");
-
-
-
-
+        printf("pa\n");
         // ----------------------------
 
     // }

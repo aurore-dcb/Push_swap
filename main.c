@@ -1,5 +1,50 @@
 #include "push_swap.h"
 
+void free_list(t_stock *begin)
+{
+    t_stock *current = begin;
+    t_stock *temp;
+    while (current != NULL) {
+        temp = current;
+        current = current->next;
+        free(temp);
+    }
+}
+
+int index_in_list(t_list **begin_list, int nb)
+{
+    int i;
+    t_list *list;
+
+    i = 0;
+    list = *begin_list;
+    while (list)
+    {
+        if (list->i == nb)
+            return (i);
+        list = list->next;
+        i++;
+    }
+    return (-1);
+}
+
+void derniere(t_list **begin_a)
+{
+    int min;
+    int index;
+    t_list *begin;
+
+    min = (*begin_a)->i;
+    begin = *begin_a;
+    while (begin)
+    {
+        if (begin->i < min)
+            min = begin->i;
+        begin = begin->next;
+    }
+    index = index_in_list(begin_a, min);
+    move_stack_a(begin_a, index);
+}
 /*fonction principale du tri*/
 int sorting(t_list **begin_a, t_list **begin_b)
 {
@@ -12,18 +57,15 @@ int sorting(t_list **begin_a, t_list **begin_b)
         return (0);
     create_sort_tab(begin_a, tab);
     keep_just_max(begin_a, begin_b, tab);
-
-    max = (*begin_a)->i;
-
-    displays(begin_a, begin_b);
-    printf("\n");
-
-    list = NULL;
-
-    // affiche les données
-    final_sort(begin_a, begin_b, &list, max);
-
     free(tab);
+    max = (*begin_a)->i;
+    while (*begin_b)
+    {
+        list = NULL;
+        final_sort(begin_a, begin_b, &list, max);
+        free_list(list);
+    }
+    derniere(begin_a);
     return (1);
 }
 
@@ -48,35 +90,8 @@ int main(int argc, char **argv)
             printf("Erreur lors du tri\n");
             return (0);
         }
-        // else
-        // {
-        //     printf("Tri ok\n");
-        // }
-        // fin tri
 
-        // ft_swap(&begin_a);
-        // ft_push(&begin_b, &begin_a);
-        // ft_push(&begin_b, &begin_a);
-        // ft_push(&begin_b, &begin_a);
-        // ft_swap(&begin_a);
-        // ft_push(&begin_a, &begin_b);
-        // ft_push(&begin_a, &begin_b);
-        // ft_push(&begin_a, &begin_b);
-
-        printf("\nPile a : \n");
-        while (begin_a)
-        {
-            printf("%d", (begin_a)->i);
-            begin_a = (begin_a)->next;
-            printf("\n");
-        }
-        printf("\nPile b : \n");
-        while (begin_b)
-        {
-            printf("%d", begin_b->i);
-            begin_b = begin_b->next;
-            printf("\n");
-        }
+        displays(&begin_a, &begin_b);
     }
     else
         printf("Error\n");

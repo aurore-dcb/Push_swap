@@ -42,8 +42,6 @@ int no_doubles(char **argv)
     return (1);
 }
 
-// pas plus grand qu'un int
-
 
 t_list *ft_create_elem(int data)
 {
@@ -71,10 +69,7 @@ void ft_list_push_back(t_list **begin_list, int data)
         list->next = ft_create_elem(data);
     }
 	else
-    {
 		*begin_list = ft_create_elem(data);
-        printf("petit test\n");
-    } 
 }
 
 int ft_parsing(char **argv, t_list **begin_a)

@@ -18,7 +18,6 @@ typedef struct s_list
 
 typedef struct s_stock
 {
-    int n;
     int index;
     int index_maj;
     int nb_move;
@@ -50,17 +49,18 @@ int is_max(int *tab, int len);
 void keep_just_max(t_list **begin_a, t_list **begin_b, int *tab);
 
 // the_sort
-t_stock *ft_create_elem_stock(int n, int i, int maj, int move);
-void ft_list_push_back_stock(t_stock **begin_list, int n, int i, int maj, int move);
+t_stock *ft_create_elem_stock(int i, int maj, int move);
+void ft_list_push_back_stock(t_stock **begin_list, int i, int maj, int move);
 int index_maj(t_list **begin_a, int nb, int max);
 int count_move(t_list **begin_a, t_list **begin_b, int index, int maj);
 void create_list(t_list **begin_a, t_list **begin_b, t_stock **list, int max);
 void move_elem(t_list **begin_a, t_list **begin_b, t_stock **list);
+void move_stack_a(t_list **begin_a, int index_maj);
+void move_stack_c(t_list **begin_a, int index_maj);
 void final_sort(t_list **begin_a, t_list **begin_b, t_stock **list, int max);
 
 // main
+void free_list(t_stock *begin);
 int sorting(t_list **begin_a, t_list **begin_b);
-
-// t_stock *ft_create_elem_stock(int i, int maj, int move);
 
 #endif
