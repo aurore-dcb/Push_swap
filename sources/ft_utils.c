@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "headers/push_swap.h"
 
 void display_tab(int *tab, int len)
 {

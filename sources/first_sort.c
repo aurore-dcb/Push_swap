@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "headers/push_swap.h"
 
 /* pour le 1er tri */
 int *sort_int_tab(t_list **begin_a, int *tab)

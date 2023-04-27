@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "headers/push_swap.h"
 
 // que des nombres
 int only_numbers(char **argv)

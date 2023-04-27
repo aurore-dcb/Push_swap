@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "headers/push_swap.h"
 
 t_stock *ft_create_elem_stock(int i, int maj, int move)
 {
