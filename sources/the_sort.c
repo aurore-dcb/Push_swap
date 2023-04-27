@@ -101,6 +101,7 @@ void move_stack_b(t_list **begin_b, int index)
         while (index > 0)
         {
             ft_rotate(begin_b);
+            // printf("TEST rb\n");
             printf("rb\n");
             index--;
         }
@@ -110,6 +111,7 @@ void move_stack_b(t_list **begin_b, int index)
         while (index < ft_list_size(*begin_b))
         {
             ft_rev_rotate(begin_b);
+            // printf("TEST rrb\n");
             printf("rrb\n");
             index++;
         }
@@ -147,19 +149,28 @@ void move_elem(t_list **begin_a, t_list **begin_b, t_stock **list)
     t_stock *begin;
 
     nb_min = (*list)->nb_move;
+    // nb_min = 10;
     i = (*list)->index;
     maj = (*list)->index_maj;
     begin = *list;
+    // displays(begin_a, begin_b);
+    // printf("NB MIN = %d\n", nb_min);
+    
     while (begin)
     {
-        if (begin->nb_move < nb_min)
+        // printf("begin->nb_move = %d\n", begin->nb_move);
+        // printf("begin->index = %d\n", begin->index);
+        if (begin->nb_move <= nb_min)
         {
+            // printf("--------- OK ---------\n");
             nb_min = begin->nb_move;
-            i = (*list)->index;
-            maj = (*list)->index_maj;
+            i = begin->index;
+            maj = begin->index_maj;
         }
         begin = begin->next;
+        // printf("--- i = %d\n", i);
     }
+    
     move_stack_b(begin_b, i);
     move_stack_a(begin_a, maj);
 }

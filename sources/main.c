@@ -91,7 +91,7 @@ int main(int argc, char **argv)
             return (0);
         }
 
-        displays(&begin_a, &begin_b);
+        // displays(&begin_a, &begin_b);
     }
     else
         printf("Error\n");

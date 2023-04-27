@@ -10,7 +10,7 @@ RM = rm -f
 all:		${NAME}
 
 ${NAME}:	${OBJS}
-			${CC} ${CFLAGS} -o ${NAME} ${SRCS}
+			${CC} ${CFLAGS} -I./headers -o ${NAME} ${SRCS}
 
 clean:
 			${RM} ${OBJS}
