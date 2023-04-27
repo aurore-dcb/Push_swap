@@ -1,5 +1,32 @@
 #include "push_swap.h"
 
+/*fonction principale du tri*/
+int sorting(t_list **begin_a, t_list **begin_b)
+{
+    int *tab;
+    t_stock *list;
+    int max;
+
+    tab = malloc(sizeof(int) * ft_list_size(*begin_a));
+    if (!tab)
+        return (0);
+    create_sort_tab(begin_a, tab);
+    keep_just_max(begin_a, begin_b, tab);
+
+    max = (*begin_a)->i;
+
+    displays(begin_a, begin_b);
+    printf("\n");
+
+    list = NULL;
+
+    // affiche les données
+    final_sort(begin_a, begin_b, &list, max);
+
+    free(tab);
+    return (1);
+}
+
 int main(int argc, char **argv)
 {
     t_list *begin_a;

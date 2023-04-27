@@ -1,5 +1,5 @@
 NAME = push_swap
-SRCS = main.c parsing.c sorting_fct.c ft_utils.c the_sort.c
+SRCS = main.c parsing.c sorting_fct.c ft_utils.c the_sort.c first_sort.c
 OBJS = ${SRCS:.c=.o}
 
 CFLAGS = -Wall -Wextra -Werror
