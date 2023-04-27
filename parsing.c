@@ -57,6 +57,8 @@ t_list *ft_create_elem(int data)
     return(elem);
 }
 
+
+
 void ft_list_push_back(t_list **begin_list, int data)
 {
     t_list *list;
@@ -69,7 +71,10 @@ void ft_list_push_back(t_list **begin_list, int data)
         list->next = ft_create_elem(data);
     }
 	else
+    {
 		*begin_list = ft_create_elem(data);
+        printf("petit test\n");
+    } 
 }
 
 int ft_parsing(char **argv, t_list **begin_a)

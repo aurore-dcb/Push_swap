@@ -13,33 +13,33 @@ void ft_swap(t_list **begin)
     }
 }
 
-void ft_push(t_list ***begin_dst, t_list ***begin_src)
+void ft_push(t_list **begin_dst, t_list **begin_src)
 {
     t_list *new_begin;
     t_list *new_next;
     
-    if (**begin_src != NULL)
+    if (*begin_src != NULL)
     {
-        new_begin = (**begin_src)->next;
-        new_next = **begin_dst;
-        **begin_dst = **begin_src;
-        (**begin_dst)->next = new_next;
-        **begin_src = new_begin;
+        new_begin = (*begin_src)->next;
+        new_next = *begin_dst;
+        *begin_dst = *begin_src;
+        (*begin_dst)->next = new_next;
+        *begin_src = new_begin;
     }
 }
 
-void ft_rotate(t_list ***begin)
+void ft_rotate(t_list **begin)
 {
     t_list *tmp;
 
-    if (**begin && (**begin)->next)
+    if (*begin && (*begin)->next)
     {
-        tmp = **begin;
-        **begin = (**begin)->next;
-        while ((**begin)->next)
-            **begin = (**begin)->next;
-        (**begin)->next = tmp;
-        **begin = tmp->next;
+        tmp = *begin;
+        *begin = (*begin)->next;
+        while ((*begin)->next)
+            *begin = (*begin)->next;
+        (*begin)->next = tmp;
+        *begin = tmp->next;
         tmp->next = NULL;
     }
 }

@@ -16,6 +16,14 @@ typedef struct s_list
     struct s_list *next;
 } t_list;
 
+typedef struct s_stock
+{
+    int index;
+    int index_maj;
+    int nb_move;
+    struct s_stock *next;
+} t_stock;
+
 void display_tab(int *tab, int len);
 int ft_list_size(t_list *begin);
 int	ft_atoi(const char *str);
@@ -23,8 +31,8 @@ int	ft_atoi(const char *str);
 
 // sorting functions
 void ft_swap(t_list **begin);
-void ft_push(t_list ***begin_dst, t_list ***begin_src);
-void ft_rotate(t_list ***begin);
+void ft_push(t_list **begin_dst, t_list **begin_src);
+void ft_rotate(t_list **begin);
 void ft_rev_rotate(t_list **begin);
 
 // parsing
@@ -34,4 +42,7 @@ t_list *ft_create_elem(int data);
 
 // tri
 int sorting(t_list **begin_a, t_list **begin_b);
+
+// t_stock *ft_create_elem_stock(int i, int maj, int move);
+
 #endif
