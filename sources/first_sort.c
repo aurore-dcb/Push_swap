@@ -46,7 +46,7 @@ void create_sort_tab(t_list **begin_a, int *tab)
 }
 
 /* pour le 1er tri */
-int is_max(int *tab, int len)
+int find_max(int *tab, int len)
 {
     int i;
     int max;
@@ -70,24 +70,24 @@ void keep_just_max(t_list **begin_a, t_list **begin_b, int *tab)
     int len;
 
     len = ft_list_size(*begin_a);
-    max = is_max(tab, ft_list_size(*begin_a));
+    max = find_max(tab, len);
     compteur = -1;
     while (++compteur < len)
     {
         if ((*begin_a)->i != max)
         {
             ft_push(begin_b, begin_a);
-            printf("pb\n");
+            ft_putstr("pb\n");
             if ((*begin_b)->i >= tab[(len) / 2])
             {
                 ft_rotate(begin_b);
-                printf("rb\n");
+                ft_putstr("rb\n");
             }
         }
         else
         {
             ft_rotate(begin_a);
-            printf("ra\n");
+            ft_putstr("ra\n");
         }
     }
 }

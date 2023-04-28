@@ -1,57 +1,9 @@
 #include "../headers/push_swap.h"
 
-void display_tab(int *tab, int len)
-{
-    int i = 0;
-    while (i < len)
-    {
-        printf("tab[%d] = %d\n", i, tab[i]);
-        i++;
-    }
-}
-int ft_list_size(t_list *begin)
-{
-    int i;
-
-    i = 0;
-    while (begin)
-    {
-        i++;
-        begin = begin->next;
-    }
-    return (i);
-}
-
-void displays(t_list **begin_a, t_list **begin_b)
-{
-	t_list *start;
-
-	start = *begin_a;
-	printf("pile a :\n");
-	if (start != NULL)
-	{
-		while (start)
-		{
-			printf("%d\n", start->i);
-			start = start->next;
-		}
-	}
-	start = *begin_b;
-	printf("\npile b :\n");
-	if (start != NULL)
-	{
-		while (start)
-		{
-			printf("%d\n", start->i);
-			start = start->next;
-		}
-	}
-}
-
-int	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
 	int		i;
-	int		neg;
+	long		neg;
 	long	n;
 
 	i = 0;
@@ -68,11 +20,59 @@ int	ft_atoi(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		n = n * 10 + (str[i] - 48);
-		if (n * neg < -2147483648)
-			return (0);
-		else if (n * neg > 2147483647)
-			return (-1);
 		i++;
 	}
 	return (n * neg);
+}
+
+int ft_list_size(t_list *begin)
+{
+    int i;
+
+    i = 0;
+    while (begin)
+    {
+        i++;
+        begin = begin->next;
+    }
+    return (i);
+}
+
+t_list *ft_create_elem(int data)
+{
+    t_list *elem;
+
+    elem = malloc(sizeof(t_list));
+    if(!elem)
+        return (NULL);
+    elem->i = data;
+    elem->next = NULL;
+    return(elem);
+}
+
+void ft_list_push_back(t_list **begin_list, int data)
+{
+    t_list *list;
+
+    list = *begin_list;
+    if (list)
+    {
+        while (list->next)
+            list = list->next;
+        list->next = ft_create_elem(data);
+    }
+	else
+		*begin_list = ft_create_elem(data);
+}
+
+void ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str && str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }
