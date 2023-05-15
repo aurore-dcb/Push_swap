@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:54:00 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/05 17:04:58 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/15 17:30:52 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,9 @@ void				last_rotation(t_list **begin_a);
 void				free_list1(t_list **begin);
 void				free_list(t_stock **begin);
 int					sorting(t_list **begin_a, t_list **begin_b);
+
+int					special_cases(t_list **begin_a);
+int					match(t_list **begin_a, int a, int b, int c);
+void				taille_3(t_list **begin_a);
 
 #endif

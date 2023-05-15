@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:47:00 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/05 16:42:54 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/15 12:56:57 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	ft_list_size(t_list *begin)
 	int	i;
 
 	i = 0;
+	if (!begin)	
+		return (0);
 	while (begin)
 	{
 		i++;

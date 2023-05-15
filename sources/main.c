@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:30 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/05 17:04:21 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/15 17:36:46 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ int	sorting(t_list **begin_a, t_list **begin_b)
 	t_stock	*list;
 	int		max;
 
-	if (already_sort(begin_a))
-		return (1);
 	tab = malloc(sizeof(int) * ft_list_size(*begin_a));
 	if (!tab)
 		return (0);
@@ -69,6 +67,22 @@ int	sorting(t_list **begin_a, t_list **begin_b)
 	return (1);
 }
 
+int	special_cases(t_list **begin_a)
+{
+	if (ft_list_size(*begin_a) == 3)
+	{
+		taille_3(begin_a);// call fct for len=3
+		return (1);
+	}
+	// else if (ft_list_size(*begin_a) == 5)
+	// {
+	// 	// call fct for len=5
+	// 	return (1);
+	// }
+	else
+		return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*begin_a;
@@ -84,6 +98,10 @@ int	main(int argc, char **argv)
 			ft_putstr("Error\n");
 			return (0);
 		}
+		if (already_sort(&begin_a))
+			return (0);
+		if (special_cases(&begin_a))
+			return (0);
 		if (sorting(&begin_a, &begin_b) == 0)
 		{
 			ft_putstr("Error\n");
