@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:30 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/16 15:22:21 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/16 16:23:47 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,14 @@ int	special_cases(t_list **begin_a)
 {
 	if (ft_list_size(*begin_a) == 3)
 	{
-		taille_3(begin_a);// call fct for len=3
+		taille_3(begin_a);
 		return (1);
 	}
-	// else if (ft_list_size(*begin_a) == 5)
-	// {
-	// 	// call fct for len=5
-	// 	return (1);
-	// }
+	else if (ft_list_size(*begin_a) == 5)
+	{
+		// call fct for len=5
+		return (1);
+	}
 	else
 		return (0);
 }
