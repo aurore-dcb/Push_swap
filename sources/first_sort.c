@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:53 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/05 15:50:37 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/16 15:22:12 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,18 +84,11 @@ void	keep_just_max(t_list **begin_a, t_list **begin_b, int *tab)
 	{
 		if ((*begin_a)->i != max)
 		{
-			ft_push(begin_b, begin_a);
-			ft_putstr("pb\n");
+			ft_push(begin_b, begin_a, 'b');
 			if ((*begin_b)->i >= tab[(len) / 2])
-			{
-				ft_rotate(begin_b);
-				ft_putstr("rb\n");
-			}
+				ft_rotate(begin_b, 'b');
 		}
 		else
-		{
-			ft_rotate(begin_a);
-			ft_putstr("ra\n");
-		}
+			ft_rotate(begin_a, 'a');
 	}
 }

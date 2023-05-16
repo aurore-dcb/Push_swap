@@ -6,13 +6,13 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:38 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/05 15:52:41 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/16 15:15:22 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-void	ft_swap(t_list **begin)
+void	ft_swap(t_list **begin, char c)
 {
 	t_list	*tmp;
 
@@ -23,9 +23,13 @@ void	ft_swap(t_list **begin)
 		tmp->next = *begin;
 		*begin = tmp;
 	}
+	if (c == 'a')
+		write(1, "sa\n", 3);
+	else if (c == 'b')
+		write(1, "sb\n", 3);
 }
 
-void	ft_push(t_list **begin_dst, t_list **begin_src)
+void	ft_push(t_list **begin_dst, t_list **begin_src, char c)
 {
 	t_list	*new_begin;
 	t_list	*new_next;
@@ -38,9 +42,13 @@ void	ft_push(t_list **begin_dst, t_list **begin_src)
 		(*begin_dst)->next = new_next;
 		*begin_src = new_begin;
 	}
+	if (c == 'a')
+		write(1, "pa\n", 3);
+	else if (c == 'b')
+		write(1, "pb\n", 3);
 }
 
-void	ft_rotate(t_list **begin)
+void	ft_rotate(t_list **begin, char c)
 {
 	t_list	*tmp;
 
@@ -54,9 +62,13 @@ void	ft_rotate(t_list **begin)
 		*begin = tmp->next;
 		tmp->next = NULL;
 	}
+	if (c == 'a')
+		write(1, "ra\n", 3);
+	else if (c == 'b')
+		write(1, "rb\n", 3);
 }
 
-void	ft_rev_rotate(t_list **begin)
+void	ft_rev_rotate(t_list **begin, char c)
 {
 	t_list	*new_tail;
 	t_list	*tail;
@@ -79,4 +91,8 @@ void	ft_rev_rotate(t_list **begin)
 			*begin = tail;
 		}
 	}
+	if (c == 'a')
+		write(1, "rra\n", 4);
+	else if (c == 'b')
+		write(1, "rrb\n", 4);
 }

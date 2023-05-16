@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:54:00 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/15 17:30:52 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/16 15:10:37 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ t_list				*ft_create_elem(int data);
 int					ft_list_push_back(t_list **begin_list, int data);
 void				ft_putstr(char *str);
 
-void				ft_swap(t_list **begin);
-void				ft_push(t_list **begin_dst, t_list **begin_src);
-void				ft_rotate(t_list **begin);
-void				ft_rev_rotate(t_list **begin);
+void				ft_swap(t_list **begin, char c);
+void				ft_push(t_list **begin_dst, t_list **begin_src, char c);
+void				ft_rotate(t_list **begin, char c);
+void				ft_rev_rotate(t_list **begin, char c);
 
 int					only_numbers(char **argv);
 int					no_doubles(char **argv);

@@ -6,13 +6,13 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:00:02 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/15 17:37:37 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/16 15:23:06 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-int		match(t_list **begin_a, int a, int b, int c)
+int	match(t_list **begin_a, int a, int b, int c)
 {
 	if (*begin_a)
 	{
@@ -27,11 +27,11 @@ int		match(t_list **begin_a, int a, int b, int c)
 	return (0);
 }
 
-int		lst_min(t_list **begin_a)
+int	lst_min(t_list **begin_a)
 {
-	int min;
-	t_list *list;
-	
+	int		min;
+	t_list	*list;
+
 	list = *begin_a;
 	min = 0;
 	if (list)
@@ -47,11 +47,11 @@ int		lst_min(t_list **begin_a)
 	return (min);
 }
 
-int		lst_max(t_list **begin_a)
+int	lst_max(t_list **begin_a)
 {
-	int max;
-	t_list *list;
-	
+	int		max;
+	t_list	*list;
+
 	list = *begin_a;
 	max = 0;
 	if (list)
@@ -67,11 +67,11 @@ int		lst_max(t_list **begin_a)
 	return (max);
 }
 
-int lst_med(t_list **begin_a, int min, int max)
+int	lst_med(t_list **begin_a, int min, int max)
 {
-	int med;
-	t_list *list;
-	
+	int		med;
+	t_list	*list;
+
 	med = 0;
 	list = *begin_a;
 	if (list)
@@ -96,32 +96,19 @@ void	taille_3(t_list **begin_a)
 	max = lst_max(begin_a);
 	med = lst_med(begin_a, min, max);
 	if (match(begin_a, med, max, min))
-	{
-		ft_rev_rotate(begin_a);//rra
-		write(1, "rra\n", 4);
-	}
+		ft_rev_rotate(begin_a, 'a'); //rra
 	else if (match(begin_a, max, min, med))
-	{
-		ft_rotate(begin_a);//ra
-		write(1, "ra\n", 3);
-	}
+		ft_rotate(begin_a, 'a'); //ra
 	else if (match(begin_a, max, med, min))
 	{
-		ft_swap(begin_a);//sa
-		write(1, "sa\n", 3);
-		ft_rev_rotate(begin_a);//rra
-		write(1, "rra\n", 4);
+		ft_swap(begin_a, 'a');       //sa
+		ft_rev_rotate(begin_a, 'a'); //rra
 	}
 	else if (match(begin_a, med, min, max))
-	{
-		ft_swap(begin_a);//sa
-		write(1, "sa\n", 3);
-	}
+		ft_swap(begin_a, 'a'); //sa
 	else if (match(begin_a, min, max, med))
 	{
-		ft_rev_rotate(begin_a);//rra
-		write(1, "rra\n", 4);
-		ft_swap(begin_a);//sa
-		write(1, "sa\n", 3);
+		ft_rev_rotate(begin_a, 'a'); //rra
+		ft_swap(begin_a, 'a');       //sa
 	}
 }

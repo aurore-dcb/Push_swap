@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:30 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/15 17:36:46 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/16 15:22:21 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,7 @@ int	sorting(t_list **begin_a, t_list **begin_b)
 		if (!create_list(begin_a, begin_b, &list, max))
 			return (0);
 		move_elem(begin_a, begin_b, &list);
-		ft_push(begin_a, begin_b);
-		ft_putstr("pa\n");
+		ft_push(begin_a, begin_b, 'a');
 		free_list(&list);
 	}
 	last_rotation(begin_a);

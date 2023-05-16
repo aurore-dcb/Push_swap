@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:42 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/05 15:46:43 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/16 15:24:22 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ void	move_stack_b(t_list **begin_b, int index)
 	{
 		while (index > 0)
 		{
-			ft_rotate(begin_b);
-			ft_putstr("rb\n");
+			ft_rotate(begin_b, 'b');
 			index--;
 		}
 	}
@@ -27,8 +26,7 @@ void	move_stack_b(t_list **begin_b, int index)
 	{
 		while (index < ft_list_size(*begin_b))
 		{
-			ft_rev_rotate(begin_b);
-			ft_putstr("rrb\n");
+			ft_rev_rotate(begin_b, 'b');
 			index++;
 		}
 	}
@@ -40,8 +38,7 @@ void	move_stack_a(t_list **begin_a, int index_maj)
 	{
 		while (index_maj > 0)
 		{
-			ft_rotate(begin_a);
-			ft_putstr("ra\n");
+			ft_rotate(begin_a, 'a');
 			index_maj--;
 		}
 	}
@@ -49,8 +46,7 @@ void	move_stack_a(t_list **begin_a, int index_maj)
 	{
 		while (index_maj < ft_list_size(*begin_a))
 		{
-			ft_rev_rotate(begin_a);
-			ft_putstr("rra\n");
+			ft_rev_rotate(begin_a, 'a');
 			index_maj++;
 		}
 	}
