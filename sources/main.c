@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:30 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/16 16:23:47 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/18 18:20:15 by aurore           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	sorting(t_list **begin_a, t_list **begin_b)
 	return (1);
 }
 
-int	special_cases(t_list **begin_a)
+int	special_cases(t_list **begin_a, t_list **begin_b)
 {
 	if (ft_list_size(*begin_a) == 3)
 	{
@@ -75,7 +75,7 @@ int	special_cases(t_list **begin_a)
 	}
 	else if (ft_list_size(*begin_a) == 5)
 	{
-		// call fct for len=5
+		taille_5(begin_a, begin_b);
 		return (1);
 	}
 	else
@@ -99,7 +99,7 @@ int	main(int argc, char **argv)
 		}
 		if (already_sort(&begin_a))
 			return (0);
-		if (special_cases(&begin_a))
+		if (special_cases(&begin_a, &begin_b))
 			return (0);
 		if (sorting(&begin_a, &begin_b) == 0)
 		{

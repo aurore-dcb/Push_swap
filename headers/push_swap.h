@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:54:00 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/16 15:10:37 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/18 18:22:36 by aurore           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,9 @@ void				free_list1(t_list **begin);
 void				free_list(t_stock **begin);
 int					sorting(t_list **begin_a, t_list **begin_b);
 
-int					special_cases(t_list **begin_a);
+int	special_cases(t_list **begin_a, t_list **begin_b);
 int					match(t_list **begin_a, int a, int b, int c);
 void				taille_3(t_list **begin_a);
+void taille_5(t_list **begin_a, t_list **begin_b);
 
 #endif
