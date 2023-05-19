@@ -6,7 +6,7 @@
 /*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:38 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/19 10:09:09 by aurore           ###   ########.fr       */
+/*   Updated: 2023/05/19 12:14:29 by aurore           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,25 @@ void	ft_rev_rotate(t_list **begin, char c)
 		write(1, "rra\n", 4);
 	else if (c == 'b')
 		write(1, "rrb\n", 4);
+}
+
+void ft_sswap(t_list **begin_a, t_list **begin_b)
+{
+	ft_swap(begin_a, 's');
+	ft_swap(begin_b, 's');
+	write(1, "ss\n", 3);
+}
+
+void ft_rrotate(t_list **begin_a, t_list **begin_b)
+{
+	ft_rotate(begin_a, 'r');
+	ft_rotate(begin_b, 'r');
+	write(1, "rr\n", 3);
+}
+
+void ft_rrev_rotate(t_list **begin_a, t_list **begin_b)
+{
+	ft_rev_rotate(begin_a, 'r');
+	ft_rev_rotate(begin_b, 'r');
+	write(1, "rrr\n", 4);
 }
