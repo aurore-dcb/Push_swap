@@ -6,11 +6,32 @@
 /*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:30 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/18 18:20:15 by aurore           ###   ########.fr       */
+/*   Updated: 2023/05/19 10:08:38 by aurore           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
+
+void	display(t_list **begin_a, t_list **begin_b)
+{
+	t_list *lst1;
+	t_list *lst2;
+
+	lst1 = *begin_a;
+	lst2 = *begin_b;
+	printf("pile A :\n");
+	while (lst1)
+	{
+		printf("%d\n", lst1->i);
+		lst1 = lst1->next;
+	}
+	printf("pile B :\n");
+	while (lst2)
+	{
+		printf("%d\n", lst2->i);
+		lst2 = lst2->next;
+	}
+}
 
 void	free_list1(t_list **begin)
 {
@@ -97,9 +118,7 @@ int	main(int argc, char **argv)
 			ft_putstr("Error\n");
 			return (0);
 		}
-		if (already_sort(&begin_a))
-			return (0);
-		if (special_cases(&begin_a, &begin_b))
+		if (already_sort(&begin_a) || special_cases(&begin_a, &begin_b))
 			return (0);
 		if (sorting(&begin_a, &begin_b) == 0)
 		{
@@ -108,6 +127,5 @@ int	main(int argc, char **argv)
 		}
 		free_list1(&begin_a);
 	}
-	else
-		ft_putstr("Error\n");
+	return (0);
 }

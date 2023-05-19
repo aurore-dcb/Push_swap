@@ -1,18 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting_fct2.c                                     :+:      :+:    :+:   */
+/*   parsing_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 15:03:20 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/16 15:06:25 by aducobu          ###   ########.fr       */
+/*   Created: 2023/05/19 10:12:28 by aurore            #+#    #+#             */
+/*   Updated: 2023/05/19 11:02:16 by aurore           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void    swap_a(t_list **begin_a)
-{
-    
-}
+#include "../headers/push_swap.h"
+#include "../headers/push_swap_bonus.h"
