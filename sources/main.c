@@ -6,7 +6,7 @@
 /*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:30 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/19 10:08:38 by aurore           ###   ########.fr       */
+/*   Updated: 2023/05/19 18:53:47 by aurore           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,33 +33,6 @@ void	display(t_list **begin_a, t_list **begin_b)
 	}
 }
 
-void	free_list1(t_list **begin)
-{
-	t_list	*current;
-	t_list	*temp;
-
-	current = *begin;
-	while (current != NULL)
-	{
-		temp = current;
-		current = current->next;
-		free(temp);
-	}
-}
-
-void	free_list(t_stock **begin)
-{
-	t_stock	*current;
-	t_stock	*temp;
-
-	current = *begin;
-	while (current != NULL)
-	{
-		temp = current;
-		current = current->next;
-		free(temp);
-	}
-}
 
 int	sorting(t_list **begin_a, t_list **begin_b)
 {

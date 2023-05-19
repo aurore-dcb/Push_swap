@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 10:11:00 by aurore            #+#    #+#             */
-/*   Updated: 2023/05/19 11:10:47 by aurore           ###   ########.fr       */
+/*   Created: 2023/05/19 18:51:52 by aurore            #+#    #+#             */
+/*   Updated: 2023/05/19 18:52:13 by aurore           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,30 @@
 #include "../headers/push_swap_bonus.h"
 #include "../Get_next_line/get_next_line.h"
 
-int main(int argc, char **argv)
+void	free_list1(t_list **begin)
 {
-    t_list	*begin_a;
-	t_list	*begin_b;
+	t_list	*current;
+	t_list	*temp;
 
-	begin_a = NULL;
-	begin_b = NULL;
-    if (argc > 1)
-    {
-        if (ft_parsing(argv, &begin_a) == 0)
-		{
-			free_list1(&begin_a);
-			ft_putstr("Error\n");
-			return (0);
-		}
-        if (already_sort(&begin_a))
-            return (0);
-        
-    }
-    return (0);
+	current = *begin;
+	while (current != NULL)
+	{
+		temp = current;
+		current = current->next;
+		free(temp);
+	}
+}
+
+void	free_list(t_stock **begin)
+{
+	t_stock	*current;
+	t_stock	*temp;
+
+	current = *begin;
+	while (current != NULL)
+	{
+		temp = current;
+		current = current->next;
+		free(temp);
+	}
 }

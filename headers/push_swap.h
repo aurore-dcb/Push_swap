@@ -6,7 +6,7 @@
 /*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:54:00 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/18 18:22:36 by aurore           ###   ########.fr       */
+/*   Updated: 2023/05/19 20:40:49 by aurore           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_stock
 	int				nb_move;
 	struct s_stock	*next;
 }					t_stock;
+
 
 long int			ft_atoi(const char *str);
 int					ft_list_size(t_list *begin);

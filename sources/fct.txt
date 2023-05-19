@@ -1,11 +1,17 @@
 sa - ft_swap(begin_a, 'a')
 sb - ft_swap(begin_b, 'b')
+
 ss - ft_sswap(begin_a, begin_b);
+
 pa - ft_push(begin_a, 'a');
 pb - ft_push(begin_b, 'b');
+
 ra - ft_rotate(begin_a, 'a');
 rb - ft_rotate(begin_a, 'a');
+
 rr - ft_rrotate(begin_a, begin_b);
+
 rra - ft_rev_rotate(begin_a, 'a');
 rrb - ft_rev_rotate(begin_b, 'b');
+
 rrr - ft_rrev_rotate(begin_a, begin_b);
