@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:47:00 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/19 10:08:34 by aurore           ###   ########.fr       */
+/*   Updated: 2023/05/25 18:31:16 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_list_size(t_list *begin)
 	int	i;
 
 	i = 0;
-	if (!begin)	
+	if (!begin)
 		return (0);
 	while (begin)
 	{

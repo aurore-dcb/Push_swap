@@ -3,36 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:30 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/19 18:53:47 by aurore           ###   ########.fr       */
+/*   Updated: 2023/05/25 18:30:26 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
-
-void	display(t_list **begin_a, t_list **begin_b)
-{
-	t_list *lst1;
-	t_list *lst2;
-
-	lst1 = *begin_a;
-	lst2 = *begin_b;
-	printf("pile A :\n");
-	while (lst1)
-	{
-		printf("%d\n", lst1->i);
-		lst1 = lst1->next;
-	}
-	printf("pile B :\n");
-	while (lst2)
-	{
-		printf("%d\n", lst2->i);
-		lst2 = lst2->next;
-	}
-}
-
 
 int	sorting(t_list **begin_a, t_list **begin_b)
 {

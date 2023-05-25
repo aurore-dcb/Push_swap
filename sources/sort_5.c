@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:38:11 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/19 10:08:55 by aurore           ###   ########.fr       */
+/*   Updated: 2023/05/25 18:29:44 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int	index_min(t_list **begin_a)
 	return (index);
 }
 
-void small(t_list **begin_a)
+void	small(t_list **begin_a)
 {
-	int i;
+	int	i;
 
 	i = index_min(begin_a);
 	if (i == 1)
@@ -52,14 +52,14 @@ void small(t_list **begin_a)
 	}
 	else if (i == ft_list_size(*begin_a) - 2)
 	{
-		ft_rev_rotate(begin_a, 'a');//rra
-		ft_rev_rotate(begin_a, 'a');//rra
+		ft_rev_rotate(begin_a, 'a');
+		ft_rev_rotate(begin_a, 'a');
 	}
 	else if (i == ft_list_size(*begin_a) - 1)
-		ft_rev_rotate(begin_a, 'a');//rra
+		ft_rev_rotate(begin_a, 'a');
 }
 
-void taille_5(t_list **begin_a, t_list **begin_b)
+void	taille_5(t_list **begin_a, t_list **begin_b)
 {
 	small(begin_a);
 	ft_push(begin_b, begin_a, 'b');

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:54:00 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/19 20:40:49 by aurore           ###   ########.fr       */
+/*   Updated: 2023/05/25 18:27:57 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef struct s_stock
 	struct s_stock	*next;
 }					t_stock;
 
-
 long int			ft_atoi(const char *str);
 int					ft_list_size(t_list *begin);
 t_list				*ft_create_elem(int data);
@@ -45,6 +44,10 @@ void				ft_swap(t_list **begin, char c);
 void				ft_push(t_list **begin_dst, t_list **begin_src, char c);
 void				ft_rotate(t_list **begin, char c);
 void				ft_rev_rotate(t_list **begin, char c);
+
+void				ft_sswap(t_list **begin_a, t_list **begin_b);
+void				ft_rrotate(t_list **begin_a, t_list **begin_b);
+void				ft_rrev_rotate(t_list **begin_a, t_list **begin_b);
 
 int					only_numbers(char **argv);
 int					no_doubles(char **argv);
@@ -77,9 +80,9 @@ void				free_list1(t_list **begin);
 void				free_list(t_stock **begin);
 int					sorting(t_list **begin_a, t_list **begin_b);
 
-int	special_cases(t_list **begin_a, t_list **begin_b);
+int					special_cases(t_list **begin_a, t_list **begin_b);
 int					match(t_list **begin_a, int a, int b, int c);
 void				taille_3(t_list **begin_a);
-void taille_5(t_list **begin_a, t_list **begin_b);
+void				taille_5(t_list **begin_a, t_list **begin_b);
 
 #endif

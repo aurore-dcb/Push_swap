@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   sorting_fct2_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 18:51:52 by aurore            #+#    #+#             */
-/*   Updated: 2023/05/25 18:34:04 by aducobu          ###   ########.fr       */
+/*   Created: 2023/05/25 18:10:12 by aducobu           #+#    #+#             */
+/*   Updated: 2023/05/25 18:25:08 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 #include "../headers/push_swap_bonus.h"
-#include "../gnl/get_next_line.h"
 
-void	free_list1(t_list **begin)
+void	ft_sswap_bonus(t_list **begin_a, t_list **begin_b)
 {
-	t_list	*current;
-	t_list	*temp;
-
-	current = *begin;
-	while (current != NULL)
-	{
-		temp = current;
-		current = current->next;
-		free(temp);
-	}
+	ft_swap(begin_a, 's');
+	ft_swap(begin_b, 's');
 }
 
-void	free_list(t_stock **begin)
+void	ft_rrotate_bonus(t_list **begin_a, t_list **begin_b)
 {
-	t_stock	*current;
-	t_stock	*temp;
+	ft_rotate(begin_a, 'r');
+	ft_rotate(begin_b, 'r');
+}
 
-	current = *begin;
-	while (current != NULL)
-	{
-		temp = current;
-		current = current->next;
-		free(temp);
-	}
+void	ft_rrev_rotate_bonus(t_list **begin_a, t_list **begin_b)
+{
+	ft_rev_rotate(begin_a, 'r');
+	ft_rev_rotate(begin_b, 'r');
 }

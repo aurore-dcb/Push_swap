@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:00:02 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/19 10:09:01 by aurore           ###   ########.fr       */
+/*   Updated: 2023/05/25 18:28:55 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,19 +96,19 @@ void	taille_3(t_list **begin_a)
 	max = lst_max(begin_a);
 	med = lst_med(begin_a, min, max);
 	if (match(begin_a, med, max, min))
-		ft_rev_rotate(begin_a, 'a'); //rra
+		ft_rev_rotate(begin_a, 'a');
 	else if (match(begin_a, max, min, med))
-		ft_rotate(begin_a, 'a'); //ra
+		ft_rotate(begin_a, 'a');
 	else if (match(begin_a, max, med, min))
 	{
-		ft_swap(begin_a, 'a');       //sa
-		ft_rev_rotate(begin_a, 'a'); //rra
+		ft_swap(begin_a, 'a');
+		ft_rev_rotate(begin_a, 'a');
 	}
 	else if (match(begin_a, med, min, max))
-		ft_swap(begin_a, 'a'); //sa
+		ft_swap(begin_a, 'a');
 	else if (match(begin_a, min, max, med))
 	{
-		ft_rev_rotate(begin_a, 'a'); //rra
-		ft_swap(begin_a, 'a');       //sa
+		ft_rev_rotate(begin_a, 'a');
+		ft_swap(begin_a, 'a');
 	}
 }
