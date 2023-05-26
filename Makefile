@@ -6,7 +6,7 @@
 #    By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/13 16:34:36 by aducobu           #+#    #+#              #
-#    Updated: 2023/05/25 18:33:23 by aducobu          ###   ########.fr        #
+#    Updated: 2023/05/26 18:49:44 by aducobu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ SRCS = 			sources/main.c \
 				sources/first_sort.c \
 				sources/create_list.c \
 				sources/sorting_move.c \
-				sources/sort_3.c \
-				sources/sort_5.c \
+				sources/pre_tri.c \
+				sources/pre_tri2.c \
 				sources/ft_free.c
 OBJS = 			${SRCS:.c=.o}
 
@@ -34,8 +34,8 @@ BONUS_SRCS = 	bonus/main_bonus.c \
 				sources/first_sort.c \
 				sources/create_list.c \
 				sources/sorting_move.c \
-				sources/sort_3.c \
-				sources/sort_5.c \
+				sources/pre_tri.c \
+				sources/pre_tri2.c \
 				sources/ft_free.c \
 				gnl/get_next_line.c gnl/get_next_line_utils.c
 BONUS_OBJS = 	${BONUS_SRCS:.c=.o}
