@@ -6,18 +6,18 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 18:51:52 by aurore            #+#    #+#             */
-/*   Updated: 2023/05/25 18:34:04 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 00:44:17 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 #include "../headers/push_swap_bonus.h"
-#include "../gnl/get_next_line.h"
+#include "../libft/libft.h"
 
-void	free_list1(t_list **begin)
+void	free_list1(t_stack **begin)
 {
-	t_list	*current;
-	t_list	*temp;
+	t_stack	*current;
+	t_stack	*temp;
 
 	current = *begin;
 	while (current != NULL)

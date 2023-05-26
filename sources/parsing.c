@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:34 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/19 10:08:42 by aurore           ###   ########.fr       */
+/*   Updated: 2023/05/27 00:50:05 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
+#include "../libft/libft.h"
 
 int	only_numbers(char **argv)
 {
@@ -61,18 +62,18 @@ int	arg_lenght(char **arg)
 	i = 0;
 	while (arg[i])
 	{
-		if (ft_atoi(arg[i]) < -2147483648)
+		if (ft_long_atoi(arg[i]) < -2147483648)
 			return (0);
-		else if (ft_atoi(arg[i]) > 2147483647)
+		else if (ft_long_atoi(arg[i]) > 2147483647)
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int	already_sort(t_list **begin_a)
+int	already_sort(t_stack **begin_a)
 {
-	t_list	*list;
+	t_stack	*list;
 
 	list = *begin_a;
 	if (list)
@@ -87,7 +88,7 @@ int	already_sort(t_list **begin_a)
 	return (1);
 }
 
-int	ft_parsing(char **argv, t_list **begin_a)
+int	ft_parsing(char **argv, t_stack **begin_a)
 {
 	int	i;
 

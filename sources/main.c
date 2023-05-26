@@ -6,13 +6,14 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:30 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/25 18:30:26 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 00:44:57 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
+#include "../libft/libft.h"
 
-int	sorting(t_list **begin_a, t_list **begin_b)
+int	sorting(t_stack **begin_a, t_stack **begin_b)
 {
 	int		*tab;
 	t_stock	*list;
@@ -38,7 +39,7 @@ int	sorting(t_list **begin_a, t_list **begin_b)
 	return (1);
 }
 
-int	special_cases(t_list **begin_a, t_list **begin_b)
+int	special_cases(t_stack **begin_a, t_stack **begin_b)
 {
 	if (ft_list_size(*begin_a) == 3)
 	{
@@ -56,8 +57,8 @@ int	special_cases(t_list **begin_a, t_list **begin_b)
 
 int	main(int argc, char **argv)
 {
-	t_list	*begin_a;
-	t_list	*begin_b;
+	t_stack	*begin_a;
+	t_stack	*begin_b;
 
 	begin_a = NULL;
 	begin_b = NULL;

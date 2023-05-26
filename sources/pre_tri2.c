@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_5.c                                           :+:      :+:    :+:   */
+/*   pre_tri2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:38:11 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/25 18:29:44 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 00:45:19 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
+#include "../libft/libft.h"
 
-int	index_min(t_list **begin_a)
+int	index_min(t_stack **begin_a)
 {
-	t_list	*begin;
+	t_stack	*begin;
 	int		index;
 	int		min;
 
@@ -38,7 +39,7 @@ int	index_min(t_list **begin_a)
 	return (index);
 }
 
-void	small(t_list **begin_a)
+void	small(t_stack **begin_a)
 {
 	int	i;
 
@@ -59,7 +60,7 @@ void	small(t_list **begin_a)
 		ft_rev_rotate(begin_a, 'a');
 }
 
-void	taille_5(t_list **begin_a, t_list **begin_b)
+void	taille_5(t_stack **begin_a, t_stack **begin_b)
 {
 	small(begin_a);
 	ft_push(begin_b, begin_a, 'b');

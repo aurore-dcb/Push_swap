@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   create_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:47 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/19 10:08:28 by aurore           ###   ########.fr       */
+/*   Updated: 2023/05/27 00:44:25 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
+#include "../libft/libft.h"
 
 t_stock	*ft_create_elem_stock(int i, int maj, int move)
 {
@@ -48,9 +49,9 @@ int	ft_list_push_back_stock(t_stock **begin_list, int i, int maj, int move)
 	return (1);
 }
 
-int	index_maj(t_list **begin_a, int nb, int max)
+int	index_maj(t_stack **begin_a, int nb, int max)
 {
-	t_list	*begin;
+	t_stack	*begin;
 	int		index;
 	int		maj;
 
@@ -74,7 +75,7 @@ int	index_maj(t_list **begin_a, int nb, int max)
 	return (index);
 }
 
-int	count_move(t_list **begin_a, t_list **begin_b, int index, int maj)
+int	count_move(t_stack **begin_a, t_stack **begin_b, int index, int maj)
 {
 	int	nb;
 
@@ -90,12 +91,12 @@ int	count_move(t_list **begin_a, t_list **begin_b, int index, int maj)
 	return (nb);
 }
 
-int	create_list(t_list **begin_a, t_list **begin_b, t_stock **list, int max)
+int	create_list(t_stack **begin_a, t_stack **begin_b, t_stock **list, int max)
 {
 	int		index;
 	int		maj;
 	int		move;
-	t_list	*begin;
+	t_stack	*begin;
 
 	begin = *begin_b;
 	index = 0;

@@ -6,15 +6,15 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:11:00 by aurore            #+#    #+#             */
-/*   Updated: 2023/05/25 18:34:26 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 00:23:19 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../gnl/get_next_line.h"
 #include "../headers/push_swap.h"
 #include "../headers/push_swap_bonus.h"
+#include "../libft/libft.h"
 
-int	apply_sort(t_list **begin_a, t_list **begin_b)
+int	apply_sort(t_stack **begin_a, t_stack **begin_b)
 {
 	char	*move;
 
@@ -27,9 +27,9 @@ int	apply_sort(t_list **begin_a, t_list **begin_b)
 		free(move);
 	}
 	if (is_sort(begin_a, ft_list_size(*begin_a)))
-		ft_putstr("OK");
+		ft_printf("OK\n");
 	else
-		ft_putstr("KO");
+		ft_printf("KO\n");
 	free_list1(begin_a);
 	free_list1(begin_b);
 	return (1);
@@ -37,8 +37,8 @@ int	apply_sort(t_list **begin_a, t_list **begin_b)
 
 int	main(int argc, char **argv)
 {
-	t_list	*begin_a;
-	t_list	*begin_b;
+	t_stack	*begin_a;
+	t_stack	*begin_b;
 
 	begin_a = NULL;
 	begin_b = NULL;

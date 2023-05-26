@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_move.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:42 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/19 10:09:12 by aurore           ###   ########.fr       */
+/*   Updated: 2023/05/27 00:45:31 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
+#include "../libft/libft.h"
 
-void	move_stack_b(t_list **begin_b, int index)
+void	move_stack_b(t_stack **begin_b, int index)
 {
 	if (index <= ft_list_size(*begin_b) / 2)
 	{
@@ -32,7 +33,7 @@ void	move_stack_b(t_list **begin_b, int index)
 	}
 }
 
-void	move_stack_a(t_list **begin_a, int index_maj)
+void	move_stack_a(t_stack **begin_a, int index_maj)
 {
 	if (index_maj <= ft_list_size(*begin_a) / 2)
 	{
@@ -52,7 +53,7 @@ void	move_stack_a(t_list **begin_a, int index_maj)
 	}
 }
 
-void	move_elem(t_list **begin_a, t_list **begin_b, t_stock **list)
+void	move_elem(t_stack **begin_a, t_stack **begin_b, t_stock **list)
 {
 	int		nb_min;
 	int		i;
@@ -77,10 +78,10 @@ void	move_elem(t_list **begin_a, t_list **begin_b, t_stock **list)
 	move_stack_a(begin_a, maj);
 }
 
-int	index_in_list(t_list **begin_list, int nb)
+int	index_in_list(t_stack **begin_list, int nb)
 {
 	int		i;
-	t_list	*list;
+	t_stack	*list;
 
 	i = 0;
 	list = *begin_list;
@@ -94,11 +95,11 @@ int	index_in_list(t_list **begin_list, int nb)
 	return (-1);
 }
 
-void	last_rotation(t_list **begin_a)
+void	last_rotation(t_stack **begin_a)
 {
 	int		min;
 	int		index;
-	t_list	*begin;
+	t_stack	*begin;
 
 	min = (*begin_a)->i;
 	begin = *begin_a;

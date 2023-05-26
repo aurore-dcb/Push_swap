@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   first_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aurore <aurore@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:53 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/19 10:08:31 by aurore           ###   ########.fr       */
+/*   Updated: 2023/05/27 00:44:29 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
+#include "../libft/libft.h"
 
-int	*sort_int_tab(t_list **begin_a, int *tab)
+int	*sort_int_tab(t_stack **begin_a, int *tab)
 {
 	int	i;
 	int	j;
@@ -39,9 +40,9 @@ int	*sort_int_tab(t_list **begin_a, int *tab)
 	return (tab);
 }
 
-void	create_sort_tab(t_list **begin_a, int *tab)
+void	create_sort_tab(t_stack **begin_a, int *tab)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 	int		i;
 
 	i = 0;
@@ -71,7 +72,7 @@ int	find_max(int *tab, int len)
 	return (max);
 }
 
-void	keep_just_max(t_list **begin_a, t_list **begin_b, int *tab)
+void	keep_just_max(t_stack **begin_a, t_stack **begin_b, int *tab)
 {
 	int	max;
 	int	compteur;

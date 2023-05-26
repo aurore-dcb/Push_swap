@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_3.c                                           :+:      :+:    :+:   */
+/*   pre_tri.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:00:02 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/25 18:28:55 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 00:45:15 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
+#include "../libft/libft.h"
 
-int	match(t_list **begin_a, int a, int b, int c)
+int	match(t_stack **begin_a, int a, int b, int c)
 {
 	if (*begin_a)
 	{
@@ -27,10 +28,10 @@ int	match(t_list **begin_a, int a, int b, int c)
 	return (0);
 }
 
-int	lst_min(t_list **begin_a)
+int	lst_min(t_stack **begin_a)
 {
 	int		min;
-	t_list	*list;
+	t_stack	*list;
 
 	list = *begin_a;
 	min = 0;
@@ -47,10 +48,10 @@ int	lst_min(t_list **begin_a)
 	return (min);
 }
 
-int	lst_max(t_list **begin_a)
+int	lst_max(t_stack **begin_a)
 {
 	int		max;
-	t_list	*list;
+	t_stack	*list;
 
 	list = *begin_a;
 	max = 0;
@@ -67,10 +68,10 @@ int	lst_max(t_list **begin_a)
 	return (max);
 }
 
-int	lst_med(t_list **begin_a, int min, int max)
+int	lst_med(t_stack **begin_a, int min, int max)
 {
 	int		med;
-	t_list	*list;
+	t_stack	*list;
 
 	med = 0;
 	list = *begin_a;
@@ -86,7 +87,7 @@ int	lst_med(t_list **begin_a, int min, int max)
 	return (med);
 }
 
-void	taille_3(t_list **begin_a)
+void	taille_3(t_stack **begin_a)
 {
 	int	min;
 	int	med;

@@ -6,16 +6,17 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 17:17:00 by aurore            #+#    #+#             */
-/*   Updated: 2023/05/25 18:16:32 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 00:23:38 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 #include "../headers/push_swap_bonus.h"
+#include "../libft/libft.h"
 
-void	ft_swap_bonus(t_list **begin1)
+void	ft_swap_bonus(t_stack **begin1)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	if (*begin1 && (*begin1)->next)
 	{
@@ -26,10 +27,10 @@ void	ft_swap_bonus(t_list **begin1)
 	}
 }
 
-void	ft_push_bonus(t_list **begin_dst, t_list **begin_src)
+void	ft_push_bonus(t_stack **begin_dst, t_stack **begin_src)
 {
-	t_list	*new_begin;
-	t_list	*new_next;
+	t_stack	*new_begin;
+	t_stack	*new_next;
 
 	if (*begin_src != NULL)
 	{
@@ -41,9 +42,9 @@ void	ft_push_bonus(t_list **begin_dst, t_list **begin_src)
 	}
 }
 
-void	ft_rotate_bonus(t_list **begin1)
+void	ft_rotate_bonus(t_stack **begin1)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	if (*begin1 && (*begin1)->next)
 	{
@@ -57,11 +58,11 @@ void	ft_rotate_bonus(t_list **begin1)
 	}
 }
 
-void	ft_rev_rotate_bonus(t_list **begin1)
+void	ft_rev_rotate_bonus(t_stack **begin1)
 {
-	t_list	*new_tail;
-	t_list	*tail;
-	t_list	*before_tail;
+	t_stack	*new_tail;
+	t_stack	*tail;
+	t_stack	*before_tail;
 
 	if (*begin1 && (*begin1)->next)
 	{
