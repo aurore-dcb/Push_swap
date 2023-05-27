@@ -6,11 +6,12 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:34 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/27 00:50:05 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 02:41:44 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
+#include "../headers/push_swap_bonus.h"
 #include "../libft/libft.h"
 
 int	only_numbers(char **argv)
@@ -101,7 +102,7 @@ int	ft_parsing(char **argv, t_stack **begin_a)
 	i = 1;
 	while (argv[i])
 	{
-		if (!(ft_list_push_back(begin_a, ft_atoi(argv[i]))))
+		if (!(ft_list_push_back(begin_a, ft_long_atoi(argv[i]))))
 			return (0);
 		i++;
 	}

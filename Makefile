@@ -6,7 +6,7 @@
 #    By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/13 16:34:36 by aducobu           #+#    #+#              #
-#    Updated: 2023/05/27 02:02:52 by aducobu          ###   ########.fr        #
+#    Updated: 2023/05/27 02:44:01 by aducobu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRCS = 			sources/main.c \
 				sources/first_sort.c \
 				sources/create_list.c \
 				sources/sorting_move.c \
-				sources/pre_tri.c \
+				sources/sort_len3.c \
+				sources/little_cases.c \
 				sources/pre_tri2.c \
 				sources/ft_free.c
 OBJS = 			${SRCS:.c=.o}
@@ -34,7 +35,8 @@ BONUS_SRCS = 	bonus/main_bonus.c \
 				sources/first_sort.c \
 				sources/create_list.c \
 				sources/sorting_move.c \
-				sources/pre_tri.c \
+				sources/sort_len3.c \
+				sources/little_cases.c \
 				sources/pre_tri2.c \
 				sources/ft_free.c
 
@@ -53,8 +55,8 @@ libft/libft.a:
 ${NAME}:	${OBJS} libft/libft.a
 			${CC} ${CFLAGS} -o ${NAME} ${OBJS} -Llibft -lft
 
-bonus:		${OBJS} ${BONUS_OBJS}
-			${CC} ${CFLAGS} -o ${BONUS_NAME} ${BONUS_SRCS}
+bonus:		${BONUS_OBJS} libft/libft.a
+			${CC} ${CFLAGS} -o ${BONUS_NAME} ${BONUS_OBJS} -Llibft -lft
 
 clean:
 			make -C libft clean
@@ -65,48 +67,3 @@ fclean: clean
 			${RM} ${NAME} ${BONUS_NAME}
 	
 re:	fclean all
-
-
-# NAME = push_swap
-# INCLUDE = -I./headers -I./libft
-# CC = cc
-# CFLAGS = -Wall -Wextra -Werror
-# SRCS = 			sources/main.c \
-# 				sources/parsing.c \
-# 				sources/sorting_fct.c \
-# 				sources/ft_utils.c  \
-# 				sources/first_sort.c \
-# 				sources/create_list.c \
-# 				sources/sorting_move.c \
-# 				sources/pre_tri.c \
-# 				sources/pre_tri2.c \
-# 				sources/ft_free.c
-# OBJS = ${SRCS:.c=.o}
-
-# all: $(NAME)
-
-# libft/libft.a:
-# 	make -C libft
-
-# $(NAME): $(OBJS) libft/libft.a
-# 	$(CC) $(CFLAGS) $(INCLUDE) -o $(NAME) $(OBJS) -Llibft -lft
-
-# obj/%.o: src/%.c
-# 	mkdir -p $(dir $@)
-# 	$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $^
-
-# clean:
-# 	make -C libft clean
-# 	rm -rf $(OBJS)
-# 	rm -rf obj
-
-# fclean: clean
-# 	make -C libft fclean
-# 	rm -rf $(NAME)
-
-# re: fclean all
-
-# val:        $(NAME)
-# 	valgrind --track-fds=yes --leak-check=full --show-leak-kinds=all --suppressions=readline.supp --track-origins=yes ./${NAME}
-
-# .PHONY: all clean fclean re

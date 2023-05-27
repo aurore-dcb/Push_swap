@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:46:30 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/27 02:01:49 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 02:47:07 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,6 @@ int	sorting(t_stack **begin_a, t_stack **begin_b)
 	}
 	last_rotation(begin_a);
 	return (1);
-}
-
-int	special_cases(t_stack **begin_a, t_stack **begin_b)
-{
-	if (ft_list_size(*begin_a) == 3)
-	{
-		taille_3(begin_a);
-		return (1);
-	}
-	else if (ft_list_size(*begin_a) == 5)
-	{
-		taille_5(begin_a, begin_b);
-		return (1);
-	}
-	else
-		return (0);
 }
 
 int	main(int argc, char **argv)

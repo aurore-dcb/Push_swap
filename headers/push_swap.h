@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:54:00 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/27 02:04:01 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 02:48:11 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ int					sorting(t_stack **begin_a, t_stack **begin_b);
 
 int					special_cases(t_stack **begin_a, t_stack **begin_b);
 int					match(t_stack **begin_a, int a, int b, int c);
+int					index_min(t_stack **begin_a);
+void				taille_2(t_stack **begin_a);
 void				taille_3(t_stack **begin_a);
 void				taille_5(t_stack **begin_a, t_stack **begin_b);
 
