@@ -6,13 +6,13 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 11:12:40 by aurore            #+#    #+#             */
-/*   Updated: 2023/05/27 00:23:31 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 03:14:04 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "../headers/push_swap.h"
 #include "../headers/push_swap_bonus.h"
+#include "../libft/libft.h"
 
 int	ft_strlen_new_line(char *s)
 {
@@ -95,15 +95,22 @@ int	is_a_move(char *move)
 		return (0);
 	if (ft_strlen_new_line(move) == 3)
 	{
-		return (ft_strncmp(move, "rra", 3) == 0 || ft_strncmp(move, "rrb",
-				3) == 0 || ft_strncmp(move, "rrr", 3) == 0);
+		if (ft_strncmp(move, "rra", 3) == 0 || ft_strncmp(move, "rrb", 3) == 0
+			|| ft_strncmp(move, "rrr", 3) == 0)
+			return (1);
+		ft_printf("Error\n");
+		return (0);
 	}
 	else if (ft_strlen_new_line(move) == 2)
 	{
-		return (ft_strncmp(move, "sa", 2) == 0 || ft_strncmp(move, "sb", 2) == 0
-			|| ft_strncmp(move, "ss", 2) == 0 || ft_strncmp(move, "pa", 2)
-			|| ft_strncmp(move, "pb", 2) == 0 || ft_strncmp(move, "ra", 2)
-			|| ft_strncmp(move, "rb", 2) == 0 || ft_strncmp(move, "rr", 2));
+		if (ft_strncmp(move, "sa", 2) == 0 || ft_strncmp(move, "sb", 2) == 0
+			|| ft_strncmp(move, "ss", 2) == 0 || ft_strncmp(move, "pa", 2) == 0
+			|| ft_strncmp(move, "pb", 2) == 0 || ft_strncmp(move, "ra", 2) == 0
+			|| ft_strncmp(move, "rb", 2) == 0 || ft_strncmp(move, "rr", 2) == 0)
+			return (1);
+		ft_printf("Error\n");
+		return (0);
 	}
+	ft_printf("Error\n");
 	return (0);
 }

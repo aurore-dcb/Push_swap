@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:11:00 by aurore            #+#    #+#             */
-/*   Updated: 2023/05/27 01:49:00 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 03:22:13 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,6 @@ int	main(int argc, char **argv)
 		{
 			free_list1(&begin_a);
 			ft_printf("Error\n");
-			return (0);
-		}
-		if (already_sort(&begin_a))
-		{
-			free_list1(&begin_a);
 			return (0);
 		}
 		if (!apply_sort(&begin_a, &begin_b))
