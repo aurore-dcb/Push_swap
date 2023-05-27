@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:40:00 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/26 22:25:45 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 02:06:49 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 	char	*res;
 
 	i = 0;

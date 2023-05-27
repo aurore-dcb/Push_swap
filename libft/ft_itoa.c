@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:24:29 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/26 22:25:45 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 02:06:38 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	int_len(int n)
 {
 	long int	nb;
-	int		len;
+	int			len;
 
 	len = 1;
 	nb = (long int)n;
@@ -34,7 +34,7 @@ static int	int_len(int n)
 
 static char	*rev_tab(char *res)
 {
-	int	i;
+	int		i;
 	char	tmp;
 
 	i = 0;
@@ -50,8 +50,8 @@ static char	*rev_tab(char *res)
 
 char	*ft_itoa(int n)
 {
-	int		i;
-	int		len;
+	int			i;
+	int			len;
 	long int	nb;
 	char		*res;
 

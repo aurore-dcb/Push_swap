@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:54:00 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/26 23:47:50 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 02:04:01 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef struct s_stock
 	struct s_stock	*next;
 }					t_stock;
 
-// long int			ft_atoi(const char *str);
 int					ft_list_size(t_stack *begin);
 t_stack				*ft_create_elem(int data);
 int					ft_list_push_back(t_stack **begin_list, int data);
@@ -58,7 +57,8 @@ int					ft_parsing(char **argv, t_stack **begin_a);
 int					*sort_int_tab(t_stack **begin_a, int *tab);
 void				create_sort_tab(t_stack **begin_a, int *tab);
 int					find_max(int *tab, int len);
-void				keep_just_max(t_stack **begin_a, t_stack **begin_b, int *tab);
+void				keep_just_max(t_stack **begin_a, t_stack **begin_b,
+						int *tab);
 
 t_stock				*ft_create_elem_stock(int i, int maj, int move);
 int					ft_list_push_back_stock(t_stock **begin_list, int i,

@@ -6,15 +6,20 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:46:29 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/26 23:48:00 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 02:04:58 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <fcntl.h>
+# include <stdarg.h>
 # include <stddef.h>
+# include <stdio.h>
 # include <stdlib.h>
+# include <sys/types.h>
+# include <sys/uio.h>
 # include <unistd.h>
 
 int					ft_isalpha(int c);
@@ -22,13 +27,13 @@ int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
-int				ft_strlen(const char *s);
+int					ft_strlen(const char *s);
 void				*ft_memset(void *b, int c, int len);
 void				ft_bzero(void *s, int n);
 void				*ft_memcpy(void *dst, const void *src, int n);
 void				*ft_memmove(void *dst, const void *src, int len);
-int				ft_strlcpy(char *dst, const char *src, int dstsize);
-int				ft_strlcat(char *dst, const char *src, int dstsize);
+int					ft_strlcpy(char *dst, const char *src, int dstsize);
+int					ft_strlcat(char *dst, const char *src, int dstsize);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 char				*ft_strchr(const char *s, int c);
@@ -56,40 +61,31 @@ void				ft_putstr(char *s);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
-# include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-int		is_an_option(char c);
-int		conversion(va_list args, char c);
-int		ft_printf(const char *format, ...);
-int		ft_putchar(char c);
-int		ft_putstr_len(char *str);
-int		ft_num_len(unsigned int num);
-char	*ft_unsigned_itoa(unsigned int nb);
-int		ft_print_unsigned(unsigned int nb);
-int		ft_print_ptr(unsigned long p);
-int		size_nb(int nb);
-char	*ft_itoa(int nb);
-int		ft_print_nbr(int nb);
-int		size_nb_hexa(unsigned int nb);
-void	ft_print_hexa(unsigned int nb, char c);
-int		convert_hexa(unsigned int nb, char c);
+int					is_an_option(char c);
+int					conversion(va_list args, char c);
+int					ft_printf(const char *format, ...);
+int					ft_putchar(char c);
+int					ft_putstr_len(char *str);
+int					ft_num_len(unsigned int num);
+char				*ft_unsigned_itoa(unsigned int nb);
+int					ft_print_unsigned(unsigned int nb);
+int					ft_print_ptr(unsigned long p);
+int					size_nb(int nb);
+char				*ft_itoa(int nb);
+int					ft_print_nbr(int nb);
+int					size_nb_hexa(unsigned int nb);
+void				ft_print_hexa(unsigned int nb, char c);
+int					convert_hexa(unsigned int nb, char c);
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
 
-# include <fcntl.h>
-# include <stdio.h>
-# include <sys/types.h>
-# include <sys/uio.h>
-
-char	*get_next_line(int fd);
-char	*clean_stash(char *stash);
-void	modif_stash(char *stash);
-int		is_new_line(char *line);
-char	*just_the_line(char str[]);
+char				*get_next_line(int fd);
+char				*clean_stash(char *stash);
+void				modif_stash(char *stash);
+int					is_new_line(char *line);
+char				*just_the_line(char str[]);
 
 typedef struct s_list
 {

@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:37:22 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/26 22:25:45 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 02:06:43 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;
-	int	i;
+	int		i;
 
 	if (!s1 && !s2)
 		return (NULL);

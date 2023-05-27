@@ -6,12 +6,11 @@
 #    By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/13 16:34:36 by aducobu           #+#    #+#              #
-#    Updated: 2023/05/27 00:48:09 by aducobu          ###   ########.fr        #
+#    Updated: 2023/05/27 02:02:52 by aducobu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = 			push_swap
-INCLUDE = 		-I./headers/push_swap.h -I./libft/libft.h
 SRCS = 			sources/main.c \
 				sources/parsing.c \
 				sources/sorting_fct.c \
@@ -38,14 +37,13 @@ BONUS_SRCS = 	bonus/main_bonus.c \
 				sources/pre_tri.c \
 				sources/pre_tri2.c \
 				sources/ft_free.c
-				#gnl/get_next_line.c gnl/get_next_line_utils.c
+
 BONUS_OBJS = 	${BONUS_SRCS:.c=.o}
 
+CFLAGS		=	-Wall -Wextra -Werror -g3
+CC			=	gcc
 
-CFLAGS = -Wall -Wextra -Werror -g3
-CC = gcc
-
-RM = rm -f
+RM			=	rm -f
 
 all:		${NAME}
 
@@ -53,10 +51,10 @@ libft/libft.a:
 			make -C libft
 
 ${NAME}:	${OBJS} libft/libft.a
-			${CC} ${CFLAGS} -I./headers/push_swap.h -o ${NAME} ${OBJS} -Llibft -lft
+			${CC} ${CFLAGS} -o ${NAME} ${OBJS} -Llibft -lft
 
 bonus:		${OBJS} ${BONUS_OBJS}
-			${CC} ${CFLAGS} ${INCLUDE} -o ${BONUS_NAME} ${BONUS_SRCS}
+			${CC} ${CFLAGS} -o ${BONUS_NAME} ${BONUS_SRCS}
 
 clean:
 			make -C libft clean

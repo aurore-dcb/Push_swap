@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:21:58 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/26 22:26:55 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 02:05:28 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	*ft_calloc(int count, int size)
 {
 	void	*str;
 
-	if ((size_t)size > sizeof(char) * 2147483424 || (size_t)count > sizeof(char) * 2147483424)
+	if ((size_t)size > sizeof(char) * 2147483424 || (size_t)count > sizeof(char)
+		* 2147483424)
 		return (NULL);
 	str = malloc(count * size);
 	if (str == NULL)

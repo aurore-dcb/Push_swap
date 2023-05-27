@@ -6,7 +6,7 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:15:10 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/26 22:32:58 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 02:06:26 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strcat(char *dst, char *src)
 char	*ft_strjoin_stash(char *stash, char *buf)
 {
 	char	*res;
-	int	i;
+	int		i;
 
 	if (!stash && !buf)
 		return (NULL);
