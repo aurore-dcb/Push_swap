@@ -6,17 +6,17 @@
 /*   By: aducobu <aducobu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 02:12:47 by aducobu           #+#    #+#             */
-/*   Updated: 2023/05/27 02:47:18 by aducobu          ###   ########.fr       */
+/*   Updated: 2023/05/27 03:44:49 by aducobu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 #include "../libft/libft.h"
 
-void    taille_2(t_stack **begin_a)
+void	taille_2(t_stack **begin_a)
 {
-    if ((*begin_a)->i > (*begin_a)->next->i)
-        ft_swap(begin_a, 'a');
+	if ((*begin_a)->i > (*begin_a)->next->i)
+		ft_swap(begin_a, 'a');
 }
 
 void	small4(t_stack **begin_a)
@@ -35,12 +35,12 @@ void	small4(t_stack **begin_a)
 		ft_rev_rotate(begin_a, 'a');
 }
 
-void    taille_4(t_stack **begin_a, t_stack **begin_b)
+void	taille_4(t_stack **begin_a, t_stack **begin_b)
 {
-    small4(begin_a);
-    ft_push(begin_b, begin_a, 'b');
-    taille_3(begin_a);
-    ft_push(begin_a, begin_b, 'a');
+	small4(begin_a);
+	ft_push(begin_b, begin_a, 'b');
+	taille_3(begin_a);
+	ft_push(begin_a, begin_b, 'a');
 }
 
 int	special_cases(t_stack **begin_a, t_stack **begin_b)
